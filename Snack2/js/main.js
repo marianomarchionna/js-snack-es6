@@ -4,6 +4,12 @@
 // Punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
+const randomNumber = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const squadre = [
     {nome: 'Juventus', punti: 0, falli: 0},
     {nome: 'Inter', punti: 0, falli: 0},
@@ -15,8 +21,8 @@ const squadre = [
 ]
 
 for(let i = 0; i < squadre.length; i++){
-    squadre[i].punti = Math.floor(Math.random() * 100);
-    squadre[i].falli = Math.floor(Math.random() * 151);
+    squadre[i].punti = randomNumber(0, 99);
+    squadre[i].falli = randomNumber(0, 150);
 }
 
 console.log(squadre);
